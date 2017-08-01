@@ -53,7 +53,7 @@ export FAKE_SYSTEM_LIBS=$TF_INSTALL_DIR/fakeRoot/
 
 cd /tmp/gpu/py3.x
 source /tmp/gpu/py3.x/setAlias.sh
-source /tmp/gpu/py3.x/install_mpi_tf.sh
+source /tmp/gpu/py3.x/install_mpi_tf_cuda8_0.sh
 
 
 
