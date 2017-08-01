@@ -39,16 +39,21 @@
 
 
 cd /tmp
-wget https://s3.amazonaws.com/yb-lab-cfg/pnnl_tf_v2.tar.gz
-tar xvfpz pnnl_tf_v2.tar.gz
+wget https://s3.amazonaws.com/yb-lab-cfg/pnnl_tfg_v2.tar.gz
+tar xvfpz pnnl_tfg_v2.tar.gz
 ###WORKDIR /root/cpu/py3.x
 
-export PNETCDF_INSTALL_DIR=parallel-netcdf-1.7.0
-export TF_INSTALL_DIR=/tmp/cpu/py3.x
+export MPI_HOME=/usr
+export CUDA_HOME=/usr/local/cuda
+export CUDNN_HOME=/usr/local/cuda
 
-cd /tmp/cpu/py3.x
-source /tmp/cpu/py3.x/setAlias.sh
-source /tmp/cpu/py3.x/install_mpi_tf.sh
+export PNETCDF_INSTALL_DIR=parallel-netcdf-1.7.0
+export TF_INSTALL_DIR=/tmp/gpu/py3.x
+export FAKE_SYSTEM_LIBS=$TF_INSTALL_DIR/fakeRoot/
+
+cd /tmp/gpu/py3.x
+source /tmp/gpu/py3.x/setAlias.sh
+source /tmp/gpu/py3.x/install_mpi_tf.sh
 
 
 
