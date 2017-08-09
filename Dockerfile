@@ -23,10 +23,8 @@ RUN apt-get update && apt-get install -y \
     apt-get install -y npm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN pip3 install virtualenv && \
-    git clone https://github.com/krishnasrinivas/wetty && \
-    cd wetty && \
-    npm install
+RUN pip3 install virtualenv 
+
 
 ENV MPI_VERSION 2.0.1
 ADD ./install-ompi.sh /tmp/install-ompi.sh
@@ -46,5 +44,10 @@ ADD ./setup.x /usr/local/setup.x
 RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh && \
     chmod +x /usr/local/start.sh && chown nimbix.nimbix /usr/local/start.sh && \
     chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x 
+    
+RUN git clone https://github.com/krishnasrinivas/wetty && \
+    cd wetty && \
+    npm install
+    
 
 ADD ./NAE/help.html /etc/NAE/help.html
