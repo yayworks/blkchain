@@ -23,7 +23,10 @@ RUN apt-get update && apt-get install -y \
     apt-get install -y npm && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-RUN pip3 install virtualenv
+RUN pip3 install virtualenv && \
+    git clone https://github.com/krishnasrinivas/wetty && \
+    cd wetty && \
+    npm install
 
 ENV MPI_VERSION 2.0.1
 ADD ./install-ompi.sh /tmp/install-ompi.sh
