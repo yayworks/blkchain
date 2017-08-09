@@ -45,7 +45,7 @@ ADD ./setup.x /usr/local/setup.x
 RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh && \
     chmod +x /usr/local/start.sh && chown nimbix.nimbix /usr/local/start.sh && \
     chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x 
-RUN hostnamectl set-hostname Yaybench
+
     
     
 EXPOSE 8888
