@@ -2,6 +2,7 @@
 FROM nimbix/base-ubuntu-nvidia:8.0-cudnn5-devel
 MAINTAINER Nimbix, Inc. <support@nimbix.net>
 
+ADD ./hostname-tmp /etc/hostname
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -44,7 +45,8 @@ ADD ./start.sh /usr/local/start.sh
 ADD ./setup.x /usr/local/setup.x
 RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh && \
     chmod +x /usr/local/start.sh && chown nimbix.nimbix /usr/local/start.sh && \
-    chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x 
+    chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x && \
+    hostname Yaybench
     
     
 EXPOSE 8888
