@@ -49,5 +49,7 @@ RUN git clone https://github.com/krishnasrinivas/wetty && \
     cd wetty && \
     npm install
     
+EXPOSE 8888
+    
 
 ADD ./NAE/help.html /etc/NAE/help.html
