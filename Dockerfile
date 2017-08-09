@@ -38,7 +38,7 @@ RUN /bin/bash -x /tmp/install-osu.sh && rm -rf /tmp/install-osu.sh
 ADD ./yb-sw-config.NIMBIX.x8664.turbotensor.sh /tmp/yb-sw-config.NIMBIX.x8664.turbotensor.sh
 RUN /bin/bash -x /tmp/yb-sw-config.NIMBIX.x8664.turbotensor.sh 
 
-ADD ./wetty.tar.gz /usr/local/wetty
+ADD ./wetty.tar.gz /usr/local
 ADD ./config.sh /usr/local/config.sh
 ADD ./start.sh /usr/local/start.sh
 ADD ./setup.x /usr/local/setup.x
