@@ -24,6 +24,9 @@ EOF
 
 rm com.out
 
+sudo /usr/local/anaconda3/bin/conda install -c conda-forge jupyterlab <<EOF
+y
+EOF
 
 ###This finally did work
 
