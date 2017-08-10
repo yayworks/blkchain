@@ -6,7 +6,7 @@
 #                                                                                                  #
 # Copyright (C) 2017 Yayworks, Inc. - All Rights Reserved                                          #
 #                                                                                                  #
-# Last revised 07/26/2017                                                                          #
+# Last revised 08/09/2017                                                                          #
 #                                                                                                  #
 ####################################################################################################
 
@@ -40,6 +40,8 @@ sudo /usr/local/anaconda3/bin/conda install -c conda-forge tensorflow <<EOF
 y
 EOF
 
+sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade prettytensor
+sudo /usr/local/anaconda3/envs/tensorflow/bin/pip install --upgrade gym
 
 cd /tmp
 wget https://s3.amazonaws.com/yb-lab-cfg/pnnl_tfg_v2.tar.gz
