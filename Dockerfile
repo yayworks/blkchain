@@ -52,8 +52,12 @@ ADD ./start.sh /usr/local/start.sh
 ADD ./setup.x /usr/local/setup.x
 RUN chmod +x /usr/local/config.sh && chown nimbix.nimbix /usr/local/config.sh && \
     chmod +x /usr/local/start.sh && chown nimbix.nimbix /usr/local/start.sh && \
-    chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x 
+    chmod +x /usr/local/setup.x && chown nimbix.nimbix /usr/local/setup.x && \
     
+    wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add - && \
+    sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list && \
+    sudo apt-get update && \
+    sudo apt-get install s3cmd
 
 RUN echo 'export PATH=/usr/local/cuda/bin:/usr/local/anaconda3/envs/tensorflow/bin:$PATH' >> /home/nimbix/.bashrc \
 &&  echo 'export PYTHONPATH=/usr/local/anaconda3/envs/tensorflow/lib/python3.6:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/prettytensor-0.7.2-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/enum34-1.1.6-py3.6.egg:/usr/local/anaconda3/envs/tensorflow/lib/python3.6/site-packages/matplotlib:$PYTHONPATH' >> /home/nimbix/.bashrc \
