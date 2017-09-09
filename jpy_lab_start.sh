@@ -9,12 +9,9 @@ dir=$2
 
 token=`cat /dev/urandom | tr -dc 'a-z0-9' | fold -w 48 | head -n 1`
 
-/usr/local/anaconda3/bin/jupyter lab --ip=0.0.0.0 --port=$port --LabApp.token=$token &
+/usr/local/anaconda3/bin/jupyter lab --ip=0.0.0.0 --port=$port --LabApp.app_dir=$dir --LabApp.token=$token &
 
 out_str=${port}/?token=${token}
-
-
-#sed -i -e  "/${app_name}/d" /home/nimbix/tokens.list
 
 echo ${out_str} >> /home/nimbix/tokens.list
 ~                                                                                
